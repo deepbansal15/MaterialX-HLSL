@@ -1,11 +1,6 @@
-// HLSL Transmission/Opacity for MaterialX
+#include "mx_microfacet_specular.hlsl"
 
-float3 mx_get_transmission(float3 transmissionColor, float transmissionAmount, float thickness, float ior)
+float3 mx_surface_transmission(float3 N, float3 V, float3 X, float2 alpha, int distribution, FresnelData fd, float3 tint)
 {
-    return transmissionColor * transmissionAmount;
-}
-
-float mx_get_opacity(float3 transmissionColor, float transmissionAmount)
-{
-    return 1.0 - transmissionAmount * (1.0 - dot(transmissionColor, float3(0.3333, 0.3334, 0.3333)));
+    return tint;
 }
